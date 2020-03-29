@@ -59,7 +59,7 @@ public class Main {
                 input[i] = scan.nextDouble(); // Recup all inputs values of the user
             }
 
-            // Testing outputs with inputs values :
+            // Testing outputs with new inputs values :
             System.out.println("Testing outputs : ");
             new Utils().doubleToString(simple.testing(new double[][]{input}));
             System.out.println("Do you want to continue test again ? ([Y]es/no) ");
@@ -67,6 +67,5 @@ public class Main {
                 continu = false;
             }
         }
-
     }
 }
