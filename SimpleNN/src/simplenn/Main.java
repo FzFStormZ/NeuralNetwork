@@ -47,18 +47,26 @@ public class Main {
 
         // After practising outputs :
         System.out.println("Outputs after Training : ");
-        new Utils().doubleToString(simple.getOutputsResults());
+        new Utils().doubleToString(simple.getOutputsResults(), outputs);
 
         // Test if neural network have learned correctly
-        Scanner scan = new Scanner(System.in);
-        double[] input = new double[simple.getNbInputsNeuron()];
-        for (int i = 0; i < simple.getNbInputsNeuron(); i++) {
-            System.out.println("Enter a input value : ");
-            input[i] = scan.nextDouble(); // Recup all inputs values of the user
+        boolean continu = true;
+        while (continu) {
+            Scanner scan = new Scanner(System.in);
+            double[] input = new double[simple.getNbInputsNeuron()];
+            for (int i = 0; i < simple.getNbInputsNeuron(); i++) {
+                System.out.println("Enter a input value : ");
+                input[i] = scan.nextDouble(); // Recup all inputs values of the user
+            }
+
+            // Testing outputs with inputs values :
+            System.out.println("Testing outputs : ");
+            new Utils().doubleToString(simple.testing(new double[][]{input}));
+            System.out.println("Do you want to continue test again ? ([Y]es/no) ");
+            if (scan.next().equals("no")) {
+                continu = false;
+            }
         }
 
-        // Testing outputs with inputs values :
-        System.out.println("Testing outputs : ");
-        new Utils().doubleToString(simple.testing(new double[][]{input}));
     }
 }

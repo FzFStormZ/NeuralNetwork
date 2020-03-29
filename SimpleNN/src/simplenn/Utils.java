@@ -26,4 +26,18 @@ public class Utils {
             }
         }
     }
+    
+    /**
+     * Print all values of the matrix with an other matrix
+     *
+     * @param matrix a matrix
+     * @param matrixToCompare to compare
+     */
+    public void doubleToString(double[][] matrix, double[][] matrixToCompare) {
+        for (int x = 0; x < matrix.length; x++) {
+            for (int y = 0; y < matrix[x].length; y++) {
+                System.out.println(matrix[x][y] + " --> " + matrixToCompare[y][x]);
+            }
+        }
+    }
 }
