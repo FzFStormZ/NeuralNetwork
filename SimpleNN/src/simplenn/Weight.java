@@ -13,10 +13,10 @@ import java.util.Random;
  */
 public class Weight {
 
-    private final Random weightValue;
+    private final double weightValue;
 
     public Weight() {
-        this.weightValue = new Random();
+        this.weightValue = 0.0;
     }
 
     /**
@@ -30,7 +30,7 @@ public class Weight {
         double[][] array = new double[inputsNeuron][outputsNeuron];
         for (double[] array1 : array) {
             for (int j = 0; j < array1.length; j++) {
-                array1[j] = weightValue.nextDouble();
+                array1[j] = Math.random() * 2; // Change value to put your range between value(out) and 0(in)
             }
         }
         return array;

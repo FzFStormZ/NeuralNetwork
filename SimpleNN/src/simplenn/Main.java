@@ -20,15 +20,15 @@ public class Main {
 
         // Data in input
         double[][] inputs = new double[][]{
+            {1, 0, 1}, // 1 input
+            {0, 1, 1}, // 1 input
             {0, 0, 1}, // 1 input
             {1, 1, 1}, // 1 input
-            {1, 0, 1}, // 1 input
-            {0, 1, 1} // 1 input
         };
 
         // Data in output
         double[][] outputs = new double[][]{
-            {0, 1, 1, 0} // 4 possibles outputs 
+            {1, 0, 0, 1} // 4 possibles outputs 
         };
 
         // Create a neural network
@@ -48,7 +48,7 @@ public class Main {
         // After practising outputs :
         System.out.println("Outputs after Training : ");
         new Utils().doubleToString(simple.getOutputsResults(), outputs);
-
+        
         // Test if neural network have learned correctly
         boolean continu = true;
         while (continu) {
@@ -62,10 +62,11 @@ public class Main {
             // Testing outputs with new inputs values :
             System.out.println("Testing outputs : ");
             new Utils().doubleToString(simple.testing(new double[][]{input}));
-            System.out.println("Do you want to continue test again ? ([Y]es/no) ");
+            System.out.println("Do you want to continue test again ? (yes/no) ");
             if (scan.next().equals("no")) {
                 continu = false;
             }
         }
+        
     }
 }

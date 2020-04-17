@@ -66,7 +66,7 @@ public class NeuralNetwork {
                 for (int j = 0; j < adjust[i].length; j++) {
 
                     // error * f'(outputs) 
-                    adjust[i][j] = (outputs[i][j] - outputsResults[i][j]) * new Maths().sigmoidDerivation(outputsResults[i][j]);
+                    adjust[i][j] = (outputs[i][j] - outputsResults[i][j]) * new Maths().sigmoidDerivation(outputsResults[i][j]); // Change this adjustments. It's not perfect
                 }
             }
 
